@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.134" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable/bg_et_message.xml" value="0.1315" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable/bg_reciver.xml" value="0.134" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable/bg_sender.xml" value="0.1165" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable/rouindedittext.xml" value="0.1225" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/drawable/roundbutton.xml" value="0.1225" />
@@ -15,6 +17,8 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/layout/fragment_calls.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/layout/fragment_chats.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/layout/fragment_status.xml" value="0.2" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/layout/sample_reciever.xml" value="0.67" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/layout/sample_sender.xml" value="0.67" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/layout/sample_show_user.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/menu/menu.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/Whatsap_clone3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.134" />
