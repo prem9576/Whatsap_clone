@@ -1,6 +1,9 @@
 package com.prem.whatsap_clone.Adapter;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.prem.whatsap_clone.Models.MessageModel;
 import com.prem.whatsap_clone.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ChatAdapter extends  RecyclerView.Adapter{
 
@@ -67,13 +73,51 @@ public class ChatAdapter extends  RecyclerView.Adapter{
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         MessageModel messageModel = messageModels.get(position);
 
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                new AlertDialog.Builder(context)
+                        .setTitle("Delete")
+                        .setMessage("Are You sure you want to delete this message?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                FirebaseDatabase database =  FirebaseDatabase.getInstance();
+                                String senderRoom = FirebaseAuth.getInstance().getUid() +recId;
+                                database.getReference().child("chats").child(senderRoom)
+                                        .child(messageModel.getMessageId())
+                                        .setValue(null);
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
+
+                return false;
+            }
+        });
+
+
         if (holder.getClass() == SenderViewHolder.class)
         {
             ((SenderViewHolder)holder).senderMsg.setText(messageModel.getMessage());
+            Date date = new Date(messageModel.getTimestamp());
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
+            String strDate = simpleDateFormat.format(date);
+            ((SenderViewHolder)holder).senderTime.setText(strDate);
+
         }
         else
         {
             ((RecieveViewHolder)holder).receiverMsg.setText(messageModel.getMessage());
+            Date date = new Date(messageModel.getTimestamp());
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
+            String strDate = simpleDateFormat.format(date);
+            ((RecieveViewHolder)holder).receiverTime.setText(strDate);
+
         }
     }
 

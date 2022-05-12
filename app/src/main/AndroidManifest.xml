@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Whatsap_clone">
         <activity
+            android:name=".GroupChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChatDetailActivity"
             android:exported="false" />
         <activity
